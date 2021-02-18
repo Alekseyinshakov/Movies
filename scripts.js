@@ -1,8 +1,6 @@
 
 let numberOfFilms;
 
-
-
 start();
 
 let personalMovieDataBase = {
@@ -18,8 +16,15 @@ let personalMovieDataBase = {
 };
 
 rememberMyFilms();
+writeYourGenres(personalMovieDataBase.genres);
 detectPersonalLevel();
 showMyDB();
+
+function writeYourGenres(arrayGenres) {
+    for (let index = 0; index < 3; index++) {
+        arrayGenres[index] = prompt(`Ваш любимый жанр ${index + 1}`);
+    }
+}
 
 function start() {
     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?');
